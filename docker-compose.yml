@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8080"
+    tty: true
+    volumes:
+       - ~/Development/golang-echo-docker-compose/:/go/src/golang-echo-docker-compose/
+      # - golang-sync:/go/src/nxsw
+    networks:
+      - golang_default
+
+networks:
+  golang_default:
+    external: true
+
+# volumes:
+#   golang-sync:
+#     external: true

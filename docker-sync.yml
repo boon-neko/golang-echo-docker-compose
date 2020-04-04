@@ -1,0 +1,14 @@
+version: '2'
+
+options:
+  verbose: true
+  compose-file-path: 'docker-compose.yml'
+syncs:
+  golang-sync:
+    src: '~/Documents/nxsw/nxsw-golang-docker'
+    sync_strategy: 'rsync'
+    watch_strategy: 'fswatch'
+    sync_host_port: 13894
+    sync_user: 'nxsw-develop'
+    sync_userid: '1000'
+    sync_args: '-v --copy-links --hard-links'
